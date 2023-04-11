@@ -70,18 +70,21 @@
 
         <td><input type="button" value="+" data-num="+" class="btn""> </td>
     </tr>
-    raushan kumar singh ojfdoifdjgifjg
+    
 </table>
 
 
     <script>
+        let equal = document.querySelector(".equal");
+        let screen = document.querySelector(".screen");
         let btn = document.querySelectorAll(".btn");
         btn.forEach((value, ind) =>{
             value.addEventListener('click', () =>{
                 let gtvl = value.getAttribute('data-num');
-                console.log(gtvl);
+                screen.value += gtvl;
             })
         });
+
     </script>
 
 </body>
