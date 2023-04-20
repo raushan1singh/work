@@ -35,7 +35,7 @@
   </style>
 </head>
 <body>
-    raushan kumar singh
+   
   <table id="calcu">
     <tr>
         <td colspan="3"><input type="text" id="screen" class="screen"></td>
@@ -74,13 +74,29 @@
 
 
     <script>
+        let cancel = document.querySelector(".cancel");
+        let equal = document.querySelector(".equal");
+        let screen = document.querySelector(".screen");
         let btn = document.querySelectorAll(".btn");
         btn.forEach((value, ind) =>{
             value.addEventListener('click', () =>{
                 let gtvl = value.getAttribute('data-num');
-                console.log(gtvl);
+                screen.value += gtvl;
             })
         });
+
+        equal.addEventListener('click', () =>{
+            if(screen.value === ''){
+                screen.value == "";
+            }else{
+                screen.value = eval(screen.value);
+            }
+        });
+
+        cancel.addEventListener('click', () =>{
+            screen.value = "";
+        });
+
     </script>
 
 </body>
