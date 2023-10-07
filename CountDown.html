@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <h2 id ="count"></h2>
+
+    <script>
+        function cd (){
+            let setDate = "15 August 2023 10:00:00 PM";
+            document.querySelector('#display').innerHTML = `Open At ${setDate}`;
+
+            let end = new Date(setDate);
+            let now = new Date();
+            let diff = (end - now)/1000;
+
+            let day = Math.floor(diff / 3600 / 24);
+            let hr = Math.floor(diff / 3600) % 24;
+            let min = Math.floor(diff / 60) % 60;
+            let sec = Math.floor(diff) % 60;
+
+            if(diff <= 0){
+                document.querySelector('#count').innerHTML = "Complete";
+            }else{
+                document.querySelector('#count').innerHTML = `Day : ${day} Hour : ${hr} Min : ${min} Sec : ${sec}`;
+            }
+            
+        } 
+        setInterval(cd, 1000);
+    </script>
+</body>
+</html>
