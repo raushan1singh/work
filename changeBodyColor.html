@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+        }
+
+        #black {
+            background-color: #000;
+        }
+
+        #red {
+            background-color: #FF0000;
+        }
+
+        #yellow {
+            background-color: #FFFF00;
+        }
+
+        #green {
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Click on buttons for change body color</p>
+        
+        <button id="black"></button>
+        <button id="red"></button>
+        <button id="yellow"></button>
+        <button id="green"></button>
+    </div>
+
+    <script>
+        let button = document.querySelectorAll('button');
+        let body = document.querySelector('body');
+
+        button.forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+             let clr = e.target.id;
+             if(clr == 'black'){
+                body.style.backgroundColor = clr;
+             }
+             if(clr == 'red'){
+                body.style.backgroundColor = clr;
+             }
+             if(clr == 'yellow'){
+                body.style.backgroundColor = clr;
+             }
+             if(clr == 'green'){
+                body.style.backgroundColor = clr;
+             }
+            });
+        });
+    </script>
+</body>
+
+</html>
